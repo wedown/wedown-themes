@@ -1,0 +1,65 @@
+/* 京都紫 */
+#wedown {
+  --primary-color: #8e44ad;
+  --accent-color: #e8d8f0;
+  --text-color: #595959;
+}
+
+#wedown {
+  font-family: "Optima", "Songti SC", "Noto Serif SC", serif;
+  color: var(--text-color);
+  line-height: 2;
+}
+
+h1 {
+  text-align: center;
+  font-weight: normal;
+  color: var(--primary-color);
+  border: 1px solid var(--primary-color);
+  display: table;
+  margin: 40px auto;
+  padding: 10px 30px;
+  letter-spacing: 0.1em;
+}
+
+h2 {
+  text-align: center;
+  font-weight: normal;
+  color: var(--primary-color);
+  margin-top: 50px;
+}
+
+h2::before,
+h2::after {
+  content: '❧';
+  font-size: 0.8em;
+  margin: 0 10px;
+  color: rgba(142, 68, 173, 0.8);
+  vertical-align: middle;
+}
+
+h3 {
+  font-weight: bold;
+  color: #333;
+  margin-top: 30px;
+}
+
+blockquote {
+  border: none;
+  background: transparent;
+  color: var(--primary-color);
+  text-align: right;
+  font-style: italic;
+  padding: 20px 30px;
+}
+
+strong {
+  color: var(--primary-color);
+  font-weight: bold;
+}
+
+img {
+  border: 10px solid rgba(0, 0, 0, 0.05);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  box-sizing: border-box;
+}

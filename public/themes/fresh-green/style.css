@@ -1,0 +1,63 @@
+/* 清新绿 */
+#wedown {
+  --primary-color: #07c160;
+  --text-color: #333333;
+}
+
+#wedown {
+  color: var(--text-color);
+}
+
+h1 {
+  color: var(--primary-color);
+}
+
+h2 {
+  margin-top: 2.2em;
+  margin-bottom: 1.8em;
+  color: var(--primary-color);
+  font-size: 1.4em;
+  text-align: center;
+}
+
+h2::after {
+  content: '';
+  display: block;
+  margin: auto;
+  width: 40px;
+  height: 4px;
+  background: var(--primary-color);
+  border-radius: 2px;
+  margin-top: 8px;
+}
+
+h3 {
+  color: var(--primary-color);
+}
+
+blockquote {
+  background: rgba(7, 193, 96, 0.1);
+  border-left: 4px solid var(--primary-color);
+  box-shadow: 0 2px 8px rgba(7, 193, 96, 0.05);
+}
+
+strong {
+  margin: 0 2px;
+  color: var(--primary-color);
+  background: linear-gradient(transparent 60%, rgba(7, 193, 96, 0.2) 0);
+}
+
+img {
+  box-shadow: 0 2px 8px rgba(7, 193, 96, 0.05);
+}
+
+hr {
+  margin: 48px auto 32px;
+  background: var(--primary-color);
+}
+
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+  border-bottom: 1px dashed var(--primary-color);
+}

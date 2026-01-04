@@ -1,0 +1,67 @@
+/* 极客黑 */
+#wedown {
+  --primary-color: #000000;
+  --text-color: #24292e;
+}
+
+#wedown {
+  color: var(--text-color);
+}
+
+h1 {
+  text-align: center;
+  background: var(--primary-color);
+  color: #fff;
+  padding: 12px;
+  border-radius: 4px;
+  font-size: 1.4em;
+  box-shadow: 0 4px 0 rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  border-bottom: 2px solid var(--primary-color);
+  padding-bottom: 8px;
+  display: block;
+}
+
+h2::before {
+  content: '#';
+  color: var(--primary-color);
+  margin-right: 8px;
+}
+
+:not(pre)>code {
+  color: #e01e5a;
+  background: #fff0f3;
+}
+
+blockquote {
+  padding-top: 16px;
+  padding-bottom: 4px;
+  background: rgba(200, 190, 187, 0.1);
+  color: #666;
+  border-left: none;
+  border-radius: 4px;
+  position: relative;
+  padding-left: 36px;
+}
+
+blockquote::before {
+  content: '"';
+  font-family: Georgia, serif;
+  font-size: 40px;
+  position: absolute;
+  left: 10px;
+  top: 0;
+  color: #586069;
+}
+
+strong {
+  color: var(--primary-color);
+}
+
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+  border-bottom: 1px dashed var(--primary-color);
+}

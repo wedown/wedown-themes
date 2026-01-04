@@ -3,14 +3,15 @@ import { writable, derived, type Writable } from 'svelte/store'
 export type DeviceMode = 'desktop' | 'mobile'
 
 export type ThemeInfo = {
-  id: string
-  name: string
-  description?: string
-  version?: string
-  preview?: string
-  cssPath: string
-  metaPath?: string
-}
+  id: string;
+  name: string;
+  description?: string;
+  version?: string;
+  preview?: string;
+  extends?: string;
+  cssPath: string;
+  metaPath?: string;
+};
 
 export type ThemeState = {
   themes: ThemeInfo[]
@@ -23,7 +24,7 @@ export type ThemeState = {
 const createThemeStore = () => {
   const themes: Writable<ThemeInfo[]> = writable([])
   const activeTheme: Writable<ThemeInfo | null> = writable(null)
-  const highlightTheme = writable('github')
+  const highlightTheme = writable('atom-one-dark');
   const deviceMode = writable<DeviceMode>('mobile')
   const markdown = writable('')
 

@@ -1,65 +1,56 @@
-:root {
-  --bg: #f9fafb;
-  --fg: #0f172a;
+#wedown {
+  --primary-color: #2563eb;
+  --text-color: #0f172a;
   --muted: #64748b;
   --border: #e2e8f0;
-  --accent: #2563eb;
-  --code-bg: #0b1624;
-  --code-fg: #e2e8f0;
 }
 
-body {
-  background: var(--bg);
-  color: var(--fg);
-}
-
-.preview {
+#wedown {
   font-family: "Inter", "SF Pro Display", system-ui, -apple-system, "Segoe UI",
     sans-serif;
   line-height: 1.7;
-  color: var(--fg);
+  color: var(--text-color);
 }
 
-.preview h1,
-.preview h2,
-.preview h3,
-.preview h4 {
-  color: var(--fg);
+h1,
+h2,
+h3,
+h4 {
   margin: 1.5em 0 0.5em;
   font-weight: 700;
 }
 
-.preview h1 {
+h1 {
   font-size: 2em;
 }
-.preview h2 {
+h2 {
   font-size: 1.6em;
 }
-.preview h3 {
+h3 {
   font-size: 1.3em;
 }
 
-.preview p {
+p {
   margin: 0.6em 0;
 }
 
-.preview a {
-  color: var(--accent);
+a {
+  color: var(--primary-color);
   text-decoration: none;
 }
-.preview a:hover {
+a:hover {
   text-decoration: underline;
 }
 
-.preview blockquote {
-  border-left: 4px solid var(--accent);
+blockquote {
+  border-left: 4px solid var(--primary-color);
   padding-left: 1em;
   margin: 1em 0;
   color: var(--muted);
   background: #eef2ff;
 }
 
-.preview code {
+code {
   font-family: "JetBrains Mono", "Fira Code", Consolas, "SFMono-Regular",
     Menlo, Monaco, monospace;
   background: rgba(15, 23, 42, 0.06);
@@ -68,39 +59,30 @@ body {
   font-size: 0.95em;
 }
 
-.preview pre {
-  background: var(--code-bg);
-  color: var(--code-fg);
-  padding: 1em;
-  border-radius: 10px;
-  overflow: auto;
-  border: 1px solid rgba(226, 232, 240, 0.2);
-}
-
-.preview table {
+table {
   width: 100%;
   border-collapse: collapse;
   margin: 1em 0;
   font-size: 0.95em;
 }
 
-.preview th,
-.preview td {
+th,
+td {
   border: 1px solid var(--border);
   padding: 0.5em 0.75em;
 }
 
-.preview th {
+th {
   background: #f1f5f9;
   text-align: left;
 }
 
-.preview ul,
-.preview ol {
+ul,
+ol {
   margin: 0.6em 0 0.6em 1.2em;
 }
 
-.preview hr {
+hr {
   border: none;
   border-top: 1px solid var(--border);
   margin: 1.5em 0;

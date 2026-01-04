@@ -48,9 +48,11 @@ async function generateThemes() {
       themes.push({
         id: themeId,
         name: meta.name || themeId,
-        description: meta.description || '',
+        description: meta.description,
         version: meta.version || '0.0.0',
-        preview: meta.preview || '',
+        preview: meta.preview,
+        colors: meta.colors || {},
+        extends: meta.extends,
         cssPath: `/themes/${themeId}/style.css`,
         metaPath: `/themes/${themeId}/meta.json`,
       });

@@ -1,0 +1,12 @@
+{
+  "name": "极客黑",
+  "description": "极客黑主题，配合代码高亮",
+  "author": "wedown",
+  "version": "v1",
+  "colors": {
+    "primary": "#000000",
+    "text": "#24292e"
+  },
+  "extends": "base",
+  "preview": ""
+}

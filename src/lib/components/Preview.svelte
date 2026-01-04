@@ -5,7 +5,7 @@
 
   export let markdown = ''
   export let theme: ThemeInfo | null = null
-  export let highlight = 'github'
+  export let highlight = 'atom-one-dark'
   export let deviceMode: DeviceMode = 'mobile'
 
   let shadowHost: HTMLDivElement | undefined = undefined
@@ -13,28 +13,39 @@
 
   $: html = renderMarkdown(markdown)
 
-  const loadCssTextIntoShadow = async (shadowRoot: ShadowRoot, url: string): Promise<void> => {
+  let styleContainer: HTMLElement | null = null
+  let contentContainer: HTMLElement | null = null
+
+  const loadCssTextIntoStyle = async (styleId: string, url: string): Promise<void> => {
+    if (!styleContainer) return
+    
+    let style = styleContainer.querySelector(`#${styleId}`)
+    if (!style) {
+      style = document.createElement('style')
+      style.id = styleId
+      styleContainer.appendChild(style)
+    }
+
     try {
       const response = await fetch(url)
       if (!response.ok) {
         throw new Error(`Failed to fetch CSS: ${url}`)
       }
       const cssText = await response.text()
-      const style = document.createElement('style')
       style.textContent = cssText
-      shadowRoot.appendChild(style)
     } catch (error) {
       console.warn(`Failed to load CSS from ${url}:`, error)
+      style.textContent = '' // Clear if failed
     }
   }
 
-  const updateShadowContent = async () => {
+  const initShadowRoot = () => {
     if (!shadowRoot) return
 
-    // 清空现有内容
-    shadowRoot.innerHTML = ''
+    // Clear existing content only if initializing
+    if (shadowRoot.childElementCount > 0) return
 
-    // 添加基础样式
+    // Base Style for Host
     const baseStyle = document.createElement('style')
     baseStyle.textContent = `
       :host {
@@ -59,45 +70,78 @@
     `
     shadowRoot.appendChild(baseStyle)
 
-    // 加载主题样式
-    if (theme?.cssPath) {
-      await loadCssTextIntoShadow(shadowRoot, theme.cssPath)
+    // Container for dynamic styles
+    styleContainer = document.createElement('div')
+    styleContainer.id = 'style-container'
+    styleContainer.style.display = 'none'
+    shadowRoot.appendChild(styleContainer)
+
+    // Container for content
+    contentContainer = document.createElement('div')
+    contentContainer.id = 'wedown'
+    shadowRoot.appendChild(contentContainer)
+  }
+
+  const updateStyles = async () => {
+    if (!styleContainer) return
+
+    // 1. Base Theme Styles (extends)
+    if (theme?.extends) {
+      const cssPath = theme.extends === 'base' ? '/themes/base.css' : `/themes/${theme.extends}/style.css`
+      await loadCssTextIntoStyle('style-base', cssPath)
+    } else {
+      const style = styleContainer.querySelector('#style-base')
+      if (style) style.textContent = ''
     }
 
-    // 加载 highlight.js 样式
+    // 2. Highlight.js Styles
     const highlightUrl = getHighlightCssUrl(highlight)
-    await loadCssTextIntoShadow(shadowRoot, highlightUrl)
+    await loadCssTextIntoStyle('style-highlight', highlightUrl)
 
-    // 创建预览容器
-    const container = document.createElement('div')
-    container.id = 'wedown'
-    container.innerHTML = html
-    shadowRoot.appendChild(container)
+    // 3. Theme Styles
+    if (theme?.cssPath) {
+      await loadCssTextIntoStyle('style-theme', theme.cssPath)
+    } else {
+      const style = styleContainer.querySelector('#style-theme')
+      if (style) style.textContent = ''
+    }
+  }
+
+  const updateContent = () => {
+    if (contentContainer) {
+      contentContainer.innerHTML = html
+    }
   }
 
   $: if (shadowHost && !shadowRoot) {
     shadowRoot = shadowHost.attachShadow({ mode: 'open' })
+    initShadowRoot()
   }
 
   $: if (shadowHost) {
-    // 更新 Shadow DOM 的 class
+    // Update Shadow DOM class
     if (deviceMode === 'mobile') {
       shadowHost.classList.add('preview--mobile')
     } else {
       shadowHost.classList.remove('preview--mobile')
     }
   }
-  $: if (shadowRoot && html) {
-    updateShadowContent()
+
+  $: if (shadowRoot) {
+    // Ensure structure exists
+    if (!styleContainer || !contentContainer) {
+      initShadowRoot()
+    }
   }
 
-  $: if (highlight || theme) {
-    if (shadowRoot) {
-      loadCssTextIntoShadow(shadowRoot, getHighlightCssUrl(highlight))
-      if (theme?.cssPath) {
-        loadCssTextIntoShadow(shadowRoot, theme.cssPath)
-      }
-    }
+  // React to style changes
+  $: if (shadowRoot && (theme || highlight)) {
+    updateStyles()
+  }
+
+  // React to content changes
+  $: if (shadowRoot && html) {
+    updateContent()
   }
 </script>
 
