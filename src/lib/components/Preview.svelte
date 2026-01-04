@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { createEventDispatcher } from 'svelte'
   import { renderMarkdown } from '../utils/markdown'
   import { getHighlightCssUrl } from '../utils/themes'
   import type { DeviceMode, ThemeInfo } from '../stores/themeStore'
@@ -10,6 +11,24 @@
 
   let shadowHost: HTMLDivElement | undefined = undefined
   let shadowRoot: ShadowRoot | null = null
+  let shellElement: HTMLDivElement
+
+  const dispatch = createEventDispatcher<{ scroll: number }>()
+
+  const handleScroll = () => {
+    if (!shellElement) return
+    const { scrollTop, scrollHeight, clientHeight } = shellElement
+    const maxScroll = scrollHeight - clientHeight
+    const percent = maxScroll > 0 ? scrollTop / maxScroll : 0
+    dispatch('scroll', percent)
+  }
+
+  export const scrollTo = (percent: number) => {
+    if (!shellElement) return
+    const { scrollHeight, clientHeight } = shellElement
+    const maxScroll = scrollHeight - clientHeight
+    shellElement.scrollTop = maxScroll * percent
+  }
 
   $: html = renderMarkdown(markdown)
 
@@ -152,7 +171,11 @@
       {theme ? theme.name : 'No theme selected'}
     </div>
   </header>
-  <div class={`preview-shell ${deviceMode === 'mobile' ? 'mobile' : 'desktop'}`}>
+  <div
+    bind:this={shellElement}
+    on:scroll={handleScroll}
+    class={`preview-shell ${deviceMode === 'mobile' ? 'mobile' : 'desktop'}`}
+  >
     <div bind:this={shadowHost} class="preview-shadow-host" class:preview--mobile={deviceMode === 'mobile'}></div>
   </div>
 </section>
