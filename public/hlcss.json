@@ -1,0 +1,322 @@
+[
+  {
+    "value": "1c-light",
+    "label": "1c Light"
+  },
+  {
+    "value": "a11y-dark",
+    "label": "A11y Dark"
+  },
+  {
+    "value": "a11y-light",
+    "label": "A11y Light"
+  },
+  {
+    "value": "agate",
+    "label": "Agate"
+  },
+  {
+    "value": "an-old-hope",
+    "label": "An Old Hope"
+  },
+  {
+    "value": "androidstudio",
+    "label": "Androidstudio"
+  },
+  {
+    "value": "arduino-light",
+    "label": "Arduino Light"
+  },
+  {
+    "value": "arta",
+    "label": "Arta"
+  },
+  {
+    "value": "ascetic",
+    "label": "Ascetic"
+  },
+  {
+    "value": "atom-one-dark-reasonable",
+    "label": "Atom One Dark Reasonable"
+  },
+  {
+    "value": "atom-one-dark",
+    "label": "Atom One Dark"
+  },
+  {
+    "value": "atom-one-light",
+    "label": "Atom One Light"
+  },
+  {
+    "value": "brown-paper",
+    "label": "Brown Paper"
+  },
+  {
+    "value": "codepen-embed",
+    "label": "Codepen Embed"
+  },
+  {
+    "value": "color-brewer",
+    "label": "Color Brewer"
+  },
+  {
+    "value": "cybertopia-cherry",
+    "label": "Cybertopia Cherry"
+  },
+  {
+    "value": "cybertopia-dimmer",
+    "label": "Cybertopia Dimmer"
+  },
+  {
+    "value": "cybertopia-icecap",
+    "label": "Cybertopia Icecap"
+  },
+  {
+    "value": "cybertopia-saturated",
+    "label": "Cybertopia Saturated"
+  },
+  {
+    "value": "dark",
+    "label": "Dark"
+  },
+  {
+    "value": "default",
+    "label": "Default"
+  },
+  {
+    "value": "devibeans",
+    "label": "Devibeans"
+  },
+  {
+    "value": "docco",
+    "label": "Docco"
+  },
+  {
+    "value": "far",
+    "label": "Far"
+  },
+  {
+    "value": "felipec",
+    "label": "Felipec"
+  },
+  {
+    "value": "foundation",
+    "label": "Foundation"
+  },
+  {
+    "value": "github-dark-dimmed",
+    "label": "Github Dark Dimmed"
+  },
+  {
+    "value": "github-dark",
+    "label": "Github Dark"
+  },
+  {
+    "value": "github",
+    "label": "Github"
+  },
+  {
+    "value": "gml",
+    "label": "Gml"
+  },
+  {
+    "value": "googlecode",
+    "label": "Googlecode"
+  },
+  {
+    "value": "gradient-dark",
+    "label": "Gradient Dark"
+  },
+  {
+    "value": "gradient-light",
+    "label": "Gradient Light"
+  },
+  {
+    "value": "grayscale",
+    "label": "Grayscale"
+  },
+  {
+    "value": "hybrid",
+    "label": "Hybrid"
+  },
+  {
+    "value": "idea",
+    "label": "Idea"
+  },
+  {
+    "value": "intellij-light",
+    "label": "Intellij Light"
+  },
+  {
+    "value": "ir-black",
+    "label": "Ir Black"
+  },
+  {
+    "value": "isbl-editor-dark",
+    "label": "Isbl Editor Dark"
+  },
+  {
+    "value": "isbl-editor-light",
+    "label": "Isbl Editor Light"
+  },
+  {
+    "value": "kimbie-dark",
+    "label": "Kimbie Dark"
+  },
+  {
+    "value": "kimbie-light",
+    "label": "Kimbie Light"
+  },
+  {
+    "value": "lightfair",
+    "label": "Lightfair"
+  },
+  {
+    "value": "lioshi",
+    "label": "Lioshi"
+  },
+  {
+    "value": "magula",
+    "label": "Magula"
+  },
+  {
+    "value": "mono-blue",
+    "label": "Mono Blue"
+  },
+  {
+    "value": "monokai-sublime",
+    "label": "Monokai Sublime"
+  },
+  {
+    "value": "monokai",
+    "label": "Monokai"
+  },
+  {
+    "value": "night-owl",
+    "label": "Night Owl"
+  },
+  {
+    "value": "nnfx-dark",
+    "label": "Nnfx Dark"
+  },
+  {
+    "value": "nnfx-light",
+    "label": "Nnfx Light"
+  },
+  {
+    "value": "nord",
+    "label": "Nord"
+  },
+  {
+    "value": "obsidian",
+    "label": "Obsidian"
+  },
+  {
+    "value": "panda-syntax-dark",
+    "label": "Panda Syntax Dark"
+  },
+  {
+    "value": "panda-syntax-light",
+    "label": "Panda Syntax Light"
+  },
+  {
+    "value": "paraiso-dark",
+    "label": "Paraiso Dark"
+  },
+  {
+    "value": "paraiso-light",
+    "label": "Paraiso Light"
+  },
+  {
+    "value": "pojoaque",
+    "label": "Pojoaque"
+  },
+  {
+    "value": "purebasic",
+    "label": "Purebasic"
+  },
+  {
+    "value": "qtcreator-dark",
+    "label": "Qtcreator Dark"
+  },
+  {
+    "value": "qtcreator-light",
+    "label": "Qtcreator Light"
+  },
+  {
+    "value": "rainbow",
+    "label": "Rainbow"
+  },
+  {
+    "value": "rose-pine-dawn",
+    "label": "Rose Pine Dawn"
+  },
+  {
+    "value": "rose-pine-moon",
+    "label": "Rose Pine Moon"
+  },
+  {
+    "value": "rose-pine",
+    "label": "Rose Pine"
+  },
+  {
+    "value": "routeros",
+    "label": "Routeros"
+  },
+  {
+    "value": "school-book",
+    "label": "School Book"
+  },
+  {
+    "value": "shades-of-purple",
+    "label": "Shades Of Purple"
+  },
+  {
+    "value": "srcery",
+    "label": "Srcery"
+  },
+  {
+    "value": "stackoverflow-dark",
+    "label": "Stackoverflow Dark"
+  },
+  {
+    "value": "stackoverflow-light",
+    "label": "Stackoverflow Light"
+  },
+  {
+    "value": "sunburst",
+    "label": "Sunburst"
+  },
+  {
+    "value": "tokyo-night-dark",
+    "label": "Tokyo Night Dark"
+  },
+  {
+    "value": "tokyo-night-light",
+    "label": "Tokyo Night Light"
+  },
+  {
+    "value": "tomorrow-night-blue",
+    "label": "Tomorrow Night Blue"
+  },
+  {
+    "value": "tomorrow-night-bright",
+    "label": "Tomorrow Night Bright"
+  },
+  {
+    "value": "vs",
+    "label": "Vs"
+  },
+  {
+    "value": "vs2015",
+    "label": "Vs2015"
+  },
+  {
+    "value": "xcode",
+    "label": "Xcode"
+  },
+  {
+    "value": "xt256",
+    "label": "Xt256"
+  }
+]

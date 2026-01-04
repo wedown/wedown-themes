@@ -1,10 +1,11 @@
 <script lang="ts">
   import { createEventDispatcher } from 'svelte'
   import type { ThemeInfo } from '../stores/themeStore'
+  import type { HighlightThemeInfo } from '../utils/themes'
 
   export let themes: ThemeInfo[] = []
   export let activeThemeId: string | null = null
-  export let highlightThemes: string[] = []
+  export let highlightThemes: HighlightThemeInfo[] = []
   export let highlightTheme = 'github'
 
   const dispatch = createEventDispatcher<{
@@ -41,7 +42,7 @@
     <label for="highlight-select">Highlight</label>
     <select id="highlight-select" on:change={handleHighlightChange} bind:value={highlightTheme}>
       {#each highlightThemes as item}
-        <option value={item}>{item}</option>
+        <option value={item.value}>{item.label}</option>
       {/each}
     </select>
   </div>

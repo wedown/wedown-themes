@@ -5,14 +5,21 @@
   import ThemeSelector from './lib/components/ThemeSelector.svelte'
   import DeviceToggle from './lib/components/DeviceToggle.svelte'
   import { themeStore } from './lib/stores/themeStore'
-  import { highlightThemes, loadLocalThemes } from './lib/utils/themes'
+  import { loadLocalThemes, loadHighlightThemes, type HighlightThemeInfo } from './lib/utils/themes'
 
   const store = themeStore
   $: state = $store
 
+  let highlightThemes: HighlightThemeInfo[] = []
+
   onMount(async () => {
-    const themes = await loadLocalThemes()
+    const [themes, hlThemes] = await Promise.all([
+      loadLocalThemes(),
+      loadHighlightThemes()
+    ])
+    
     themeStore.setThemes(themes)
+    highlightThemes = hlThemes
 
     const response = await fetch('/sample.md')
     const text = await response.text()
