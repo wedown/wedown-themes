@@ -98,7 +98,6 @@ blockquote {
 
 /* Prism Overrides for WeChat */
 pre {
-  position: relative;
   margin: 20px 0 20px;
   border: none;
   border-radius: 8px;
@@ -106,26 +105,23 @@ pre {
   overflow-x: hidden;
 }
 
-pre::before {
-  content: '';
+pre code {
   display: block;
-  position: absolute;
-  top: 18px;
-  left: 16px;
+  font-family: 'JetBrains Mono', Menlo, Monaco, Consolas, 'Courier New', monospace;
+  font-size: 13px;
+  line-height: 1.6;
+  overflow-x: auto;
+}
+
+pre code::before {
+  content: '';
+  margin: 2px 0 16px;
+  display: block;
   width: 12px;
   height: 12px;
   background: #ff5f56;
   border-radius: 50%;
   box-shadow: 20px 0 0 #ffbd2e, 40px 0 0 #27c93f;
-}
-
-pre code {
-  display: block;
-  padding-top: 3.8em !important;
-  font-family: 'JetBrains Mono', Menlo, Monaco, Consolas, 'Courier New', monospace;
-  font-size: 13px;
-  line-height: 1.6;
-  overflow-x: auto;
 }
 
 /* Tables */
