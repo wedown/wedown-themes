@@ -20,20 +20,31 @@ const OUTPUT_JSON_FILE = path.join(ROOT_DIR, 'dist/themes.json');
  */
 export async function getThemeCss(themeId) {
   const themeDir = path.join(SOURCE_THEMES_DIR, themeId);
-  if (!fs.existsSync(themeDir)) return null;
   
-  const files = await fs.promises.readdir(themeDir);
-  const styleFile = files.find(f => f.startsWith('style.'));
-  if (!styleFile) return null;
+  let styleFile;
+  let sourcePath;
+  // 如果是目录，查找 style 文件
+  if (fs.existsSync(themeDir) && fs.statSync(themeDir).isDirectory()) {
+    const files = await fs.promises.readdir(themeDir);
+    styleFile = files.find(f => f.startsWith('style.'));
+    if (styleFile) {
+      sourcePath = path.join(themeDir, styleFile);
+    }
+  } else {
+    const files = await fs.promises.readdir(SOURCE_THEMES_DIR);
+    styleFile = files.find(f => f.startsWith(themeId + '.'));
+    if (styleFile) {
+      sourcePath = path.join(SOURCE_THEMES_DIR, styleFile);
+    }
+  }
+  if (!sourcePath) return null;
 
-  const ext = path.extname(styleFile);
-  const sourcePath = path.join(themeDir, styleFile);
+  const ext = path.extname(sourcePath);
 
   try {
     if (ext === '.scss' || ext === '.sass') {
       const result = sass.compile(sourcePath, {
         style: 'expanded',
-        charset: false,
       });
       return result.css;
     } else if (ext === '.less') {
@@ -92,6 +103,11 @@ export async function runAll() {
   if (!fs.existsSync(SOURCE_THEMES_DIR)) return;
   
   const themes = await getThemesMetadata();
+
+  // 增加 base
+  themes.unshift({
+    id: 'base',
+  });
   
   // 编译并写入 CSS
   for (const theme of themes) {
