@@ -89,7 +89,7 @@ export async function getThemesMetadata() {
     themes.push({
       ...meta,
       id: themeId,
-      name: meta.name || themeId,
+      name: meta.name || themeId.replace(/-/g, ' '),
       cssPath: `/themes/${themeId}.css`,
     });
   }
