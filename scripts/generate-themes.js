@@ -63,7 +63,6 @@ export async function getThemeCss(themeId) {
 
 /**
  * 获取主题元数据列表
- * @returns {Promise<Array>}
  */
 export async function getThemesMetadata() {
   if (!fs.existsSync(SOURCE_THEMES_DIR)) return [];
@@ -103,14 +102,9 @@ export async function runAll() {
   if (!fs.existsSync(SOURCE_THEMES_DIR)) return;
   
   const themes = await getThemesMetadata();
-
-  // 增加 base
-  themes.unshift({
-    id: 'base',
-  });
   
   // 编译并写入 CSS
-  for (const theme of themes) {
+  for (const theme of [{ id: 'base' }].concat(themes)) {
     try {
       const css = await getThemeCss(theme.id);
       if (css) {
