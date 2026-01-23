@@ -1,8 +1,15 @@
-import { defineConfig } from 'vite'
+import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
-import vitePluginThemes from './scripts/vite-plugin-themes.js'
+import vitePluginThemes from './scripts/vite-plugin-themes.js';
 
 // https://vite.dev/config/
 export default defineConfig({
-  plugins: [react(), vitePluginThemes()],
-})
+  plugins: [
+    react({
+      babel: {
+        plugins: ['babel-plugin-react-compiler'],
+      },
+    }),
+    vitePluginThemes(),
+  ],
+});

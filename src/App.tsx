@@ -7,17 +7,7 @@ import { useThemeContext } from './lib/stores/themeContext';
 import { loadLocalThemes, loadHighlightThemes, type HighlightThemeInfo } from './lib/utils/themes';
 
 function App() {
-  const {
-    themes,
-    markdown,
-    deviceMode,
-    highlightTheme,
-    setThemes,
-    setMarkdown,
-    selectTheme,
-    setDeviceMode,
-    setHighlightTheme,
-  } = useThemeContext();
+  const { setThemes, setMarkdown } = useThemeContext();
 
   const [highlightThemes, setHighlightThemes] = useState<HighlightThemeInfo[]>([]);
 
@@ -31,22 +21,6 @@ function App() {
       setMarkdown(text);
     });
   }, []);
-
-  const handleEditorInput = (event: CustomEvent<string>) => {
-    setMarkdown(event.detail);
-  };
-
-  const handleThemeChange = (event: CustomEvent<string>) => {
-    selectTheme(event.detail);
-  };
-
-  const handleHighlightChange = (event: CustomEvent<string>) => {
-    setHighlightTheme(event.detail);
-  };
-
-  const handleDeviceChange = (event: CustomEvent<'desktop' | 'mobile'>) => {
-    setDeviceMode(event.detail);
-  };
 
   const editorRef = useRef<HTMLTextAreaElement>(null);
   const previewRef = useRef<HTMLDivElement>(null);

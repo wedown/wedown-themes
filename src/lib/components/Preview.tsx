@@ -7,7 +7,7 @@ function Preview({ ref, onScroll }: { ref: RefObject<HTMLDivElement | null>; onS
   const { markdown, activeTheme, highlightTheme, deviceMode } = useThemeContext();
 
   const shadowHost = useRef<HTMLDivElement>(null);
-  
+
   const handleScroll = () => {
     if (!ref.current) return;
     const { scrollTop, scrollHeight, clientHeight } = ref.current;
@@ -15,7 +15,7 @@ function Preview({ ref, onScroll }: { ref: RefObject<HTMLDivElement | null>; onS
     const percent = maxScroll > 0 ? scrollTop / maxScroll : 0;
     onScroll(percent);
   };
-  
+
   let shadowRoot = useRef<ShadowRoot | null>(null);
   let styleContainer = useRef<HTMLElement | null>(null);
   let contentContainer = useRef<HTMLElement | null>(null);
@@ -126,7 +126,6 @@ function Preview({ ref, onScroll }: { ref: RefObject<HTMLDivElement | null>; onS
   }, []);
 
   useEffect(() => {
-    console.log('------------', shadowRoot, contentContainer, html)
     if (shadowRoot && contentContainer && html) {
       contentContainer.current!.innerHTML = html;
     }
@@ -152,7 +151,7 @@ function Preview({ ref, onScroll }: { ref: RefObject<HTMLDivElement | null>; onS
       >
         <div
           ref={shadowHost}
-          className={'preview-shadow-host' + deviceMode === 'mobile' ? ' preview--mobile' : ''}
+          className={'preview-shadow-host' + (deviceMode === 'mobile' ? ' preview--mobile' : '')}
         ></div>
       </div>
     </section>
