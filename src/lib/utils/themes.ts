@@ -1,4 +1,4 @@
-import type { ThemeInfo } from '../stores/themeStore'
+import type { ThemeInfo } from '../stores/themeContext'
 
 const THEME_LINK_ID = 'theme-stylesheet'
 const HLJS_LINK_ID = 'hljs-stylesheet'

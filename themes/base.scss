@@ -51,6 +51,7 @@ ul,
 ol {
   margin: 1.5em 0 1.5em;
   padding-left: 1.5em;
+  font-size: inherit;
 }
 
 li ul,
@@ -81,19 +82,23 @@ blockquote {
   padding: 1px 16px;
   background: rgba(152, 152, 152, 0.1);
   color: #555;
-  font-size: 0.95em;
+  font-size: inherit;
   border-left: 4px solid rgba(152, 152, 152, 0.3);
+
+  p {
+    font-size: 0.95em;
+  }
 }
 
 /* Inline Code */
 :not(pre) > code {
+  margin: 0 0.1em;
+  padding: 0.1em 0.4em;
   font-family: 'JetBrains Mono', Menlo, Monaco, Consolas, 'Courier New', monospace;
   background: rgba(180, 186, 194, 0.1);
-  padding: 3px 6px;
-  border-radius: 4px;
-  font-size: 0.9em;
-  margin: 0 2px;
+  font-size: 0.87em;
   color: #1e6bb8;
+  border-radius: 4px;
 }
 
 /* Prism Overrides for WeChat */
@@ -105,7 +110,7 @@ pre {
   overflow-x: hidden;
 }
 
-pre code {
+pre > code {
   display: block;
   font-family: 'JetBrains Mono', Menlo, Monaco, Consolas, 'Courier New', monospace;
   font-size: 13px;

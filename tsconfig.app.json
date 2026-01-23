@@ -15,7 +15,8 @@
      */
     "allowJs": true,
     "checkJs": true,
-    "moduleDetection": "force"
+    "moduleDetection": "force",
+    "jsx": "react-jsx"
   },
-  "include": ["src/**/*.ts", "src/**/*.js", "src/**/*.svelte"]
+  "include": ["src/**/*.ts", "src/**/*.js", "src/**/*.svelte", "src/App.tsx", "src/main.tsx", "src/lib/components/Preview.tsx", "src/lib/components/DeviceToggle.tsx", "src/lib/components/ThemeSelector.tsx", "src/lib/stores/themeContext.tsx", "src/lib/components/Editor.tsx"]
 }
