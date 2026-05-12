@@ -1,10 +1,12 @@
+$base-font-size: 16px;
+
 #wedown {
   /* font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; */
   font-family: 'mp-quote', PingFang SC, system-ui, -apple-system, BlinkMacSystemFont, 'Helvetica Neue',
     'Hiragino Sans GB', 'Microsoft YaHei UI', 'Microsoft YaHei', Arial, sans-serif;
   padding-bottom: 1em;
   color: #252933;
-  font-size: 16px;
+  font-size: $base-font-size;
   font-weight: 400;
   text-align: left;
   line-height: 1.8;
@@ -51,7 +53,7 @@ ul,
 ol {
   margin: 1.5em 0 1.5em;
   padding-left: 1.5em;
-  font-size: inherit;
+  font-size: $base-font-size;
 }
 
 li ul,
@@ -82,7 +84,7 @@ blockquote {
   padding: 1px 16px;
   background: rgba(152, 152, 152, 0.1);
   color: #555;
-  font-size: inherit;
+  font-size: $base-font-size;
   border-left: 4px solid rgba(152, 152, 152, 0.3);
 
   p {
@@ -234,7 +236,7 @@ img + em {
   position: relative;
   width: 1em;
   height: 1em;
-  font-size: inherit;
+  font-size: $base-font-size;
   border: 1px solid rgba(200, 190, 187, 0.3);
   border-radius: 0.2em;
 }
