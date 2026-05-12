@@ -1,0 +1,12 @@
+{
+  "name": "暖纸",
+  "description": "复古纸色主题，温暖护眼",
+  "author": "wedown",
+  "version": "v1",
+  "colors": {
+    "primary": "#c67c4e",
+    "text": "#5d4037",
+    "background": "#f5f0e8"
+  },
+  "preview": ""
+}

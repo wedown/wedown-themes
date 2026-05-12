@@ -1,0 +1,12 @@
+{
+  "name": "绯潮",
+  "description": "大气中国红主题，喜庆热烈",
+  "author": "wedown",
+  "version": "v1",
+  "colors": {
+    "primary": "#b91c1c",
+    "text": "#333333",
+    "background": "#fdf2f2"
+  },
+  "preview": ""
+}

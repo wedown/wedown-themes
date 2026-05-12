@@ -1,0 +1,169 @@
+#wedown {
+  background: #1a1b26;
+  color: #c0caf5;
+  font-family: 'mp-quote', PingFang SC, system-ui, -apple-system, BlinkMacSystemFont,
+    'Helvetica Neue', 'Hiragino Sans GB', 'Microsoft YaHei UI', 'Microsoft YaHei',
+    Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.8;
+  letter-spacing: 0.02em;
+  word-wrap: break-word;
+
+  h1 {
+    color: #e0af68;
+    text-align: center;
+    font-weight: 600;
+    font-size: 1.8em;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.06);
+    padding-bottom: 0.5em;
+    margin: 2em 0 1.5em;
+  }
+
+  h2 {
+    color: #c0caf5;
+    font-weight: 600;
+    font-size: 1.5em;
+    border-left: 3px solid #e0af68;
+    padding-left: 0.75em;
+    margin: 2em 0 1.5em;
+  }
+
+  h3 {
+    color: #a9b1d6;
+    font-weight: 600;
+    font-size: 1.25em;
+    margin: 1.6em 0 1.5em;
+  }
+
+  h4 {
+    color: #a9b1d6;
+    font-weight: 600;
+    font-size: 1em;
+    margin: 1.5em 0;
+  }
+
+  p {
+    margin: 1.5em 0;
+  }
+
+  a {
+    color: #7dcfff;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  strong {
+    color: #e0af68;
+    font-weight: 600;
+  }
+
+  em {
+    font-style: italic;
+  }
+
+  ul,
+  ol {
+    margin: 1.5em 0;
+    padding-left: 1.5em;
+  }
+
+  li {
+    margin-bottom: 0.25em;
+  }
+
+  blockquote {
+    margin: 20px 0;
+    padding: 1px 16px;
+    background: #24283b;
+    border-left: 4px solid #e0af68;
+    color: #a9b1d6;
+
+    p {
+      font-size: 0.95em;
+    }
+  }
+
+  :not(pre) > code {
+    margin: 0 0.1em;
+    padding: 0.1em 0.4em;
+    font-family: 'JetBrains Mono', Menlo, Monaco, Consolas, 'Courier New', monospace;
+    background: rgba(124, 207, 255, 0.12);
+    font-size: 0.87em;
+    color: #7dcfff;
+    border-radius: 4px;
+  }
+
+  pre {
+    margin: 20px 0;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    overflow-x: hidden;
+    background: #24283b;
+
+    > code {
+      display: block;
+      font-family: 'JetBrains Mono', Menlo, Monaco, Consolas, 'Courier New', monospace;
+      font-size: 13px;
+      line-height: 1.6;
+      overflow-x: auto;
+      color: #9ece6a;
+    }
+  }
+
+  pre code::before {
+    content: '';
+    margin: 2px 0 16px;
+    display: block;
+    width: 12px;
+    height: 12px;
+    background: #ff5f56;
+    border-radius: 50%;
+    box-shadow: 20px 0 0 #ffbd2e, 40px 0 0 #27c93f;
+    opacity: 0.5;
+  }
+
+  img {
+    max-width: 100%;
+    border-radius: 4px;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.5em 0;
+    font-size: 0.875em;
+
+    th,
+    td {
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 8px 12px;
+    }
+
+    th {
+      background: rgba(255, 255, 255, 0.04);
+      font-weight: 600;
+    }
+  }
+
+  hr {
+    height: 1px;
+    padding: 0;
+    margin: 2em 0;
+    background: rgba(255, 255, 255, 0.08);
+    border: 0;
+  }
+
+  img + em {
+    color: #565f89;
+    font-size: 0.875em;
+  }
+
+  ::selection {
+    background: rgba(224, 175, 104, 0.3);
+  }
+}
