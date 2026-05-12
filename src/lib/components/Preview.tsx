@@ -99,7 +99,7 @@ function Preview({ ref, onScroll }: { ref: RefObject<HTMLDivElement | null>; onS
       await loadCssTextIntoStyle('style-base', cssPath);
     } else {
       const style = styleContainer.current.querySelector('#style-base');
-      if (style) style.textContent = '';
+      style?.remove();
     }
 
     // 2. Highlight.js Styles
@@ -111,7 +111,7 @@ function Preview({ ref, onScroll }: { ref: RefObject<HTMLDivElement | null>; onS
       await loadCssTextIntoStyle('style-theme', activeTheme.cssPath);
     } else {
       const style = styleContainer.current.querySelector('#style-theme');
-      if (style) style.textContent = '';
+      style?.remove();
     }
   };
 
