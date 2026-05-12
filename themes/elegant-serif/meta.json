@@ -7,5 +7,6 @@
     "primary": "#8e44ad",
     "text": "#595959"
   },
+  "extends": "base",
   "preview": ""
 }

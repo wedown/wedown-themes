@@ -29,8 +29,10 @@ function Preview({ ref, onScroll }: { ref: RefObject<HTMLDivElement | null>; onS
     if (!style) {
       style = document.createElement('style');
       style.id = styleId;
-      styleContainer.current.appendChild(style);
+    } else {
+      style.remove();
     }
+    styleContainer.current.appendChild(style);
 
     try {
       const response = await fetch(url);
