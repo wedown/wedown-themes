@@ -166,4 +166,94 @@
   ::selection {
     background: rgba(224, 175, 104, 0.3);
   }
+
+  .custom-container {
+    margin: 1.5em 0;
+    padding: 0.1em 1.125em;
+    border-radius: 8px;
+    font-size: 0.95em;
+    background-color: rgba(255, 255, 255, 0.03);
+
+    &-title {
+      margin: 1em 0;
+      font-weight: 600;
+    }
+  }
+
+  .custom-container.info {
+    background-color: rgba(124, 207, 255, 0.08);
+
+    .custom-container-title {
+      color: #7dcfff;
+    }
+  }
+
+  .custom-container.success {
+    background-color: rgba(158, 206, 106, 0.08);
+
+    .custom-container-title {
+      color: #9ece6a;
+    }
+  }
+
+  .custom-container.warning {
+    background-color: rgba(224, 175, 104, 0.08);
+
+    .custom-container-title {
+      color: #e0af68;
+    }
+  }
+
+  .custom-container.danger {
+    background-color: rgba(255, 95, 86, 0.08);
+
+    .custom-container-title {
+      color: #ff5f56;
+    }
+  }
+
+  .task-list {
+    padding-left: 0;
+  }
+
+  .task-list-item {
+    list-style-type: none !important;
+    padding-left: 0 !important;
+
+    .checkbox {
+      -webkit-appearance: none;
+      display: inline-block;
+      margin: 0 0.5em 0 0.25em;
+      vertical-align: middle;
+      position: relative;
+      width: 1em;
+      height: 1em;
+      font-size: 16px;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 0.2em;
+
+      &::before {
+        content: '\2713';
+        position: absolute;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        color: #1a1b26;
+        font-size: 0.8em;
+        font-weight: bold;
+      }
+
+      &.checked {
+        background-color: #e0af68;
+        border-color: #e0af68;
+
+        &::before {
+          display: flex;
+        }
+      }
+    }
+  }
 }

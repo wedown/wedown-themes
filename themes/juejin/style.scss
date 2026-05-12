@@ -170,3 +170,48 @@ ol li {
 .task-list-item {
   list-style: none;
 }
+
+.custom-container {
+  margin: 1.5em 0;
+  padding: 0.1em 1.125em;
+  border-radius: 8px;
+  font-size: 0.95em;
+  background-color: #f8f8f8;
+
+  &-title {
+    margin: 1em 0;
+    font-weight: 600;
+  }
+}
+
+.custom-container.info {
+  background-color: rgba(59, 142, 237, 0.08);
+
+  .custom-container-title {
+    color: #3b8eed;
+  }
+}
+
+.custom-container.success {
+  background-color: rgba(39, 201, 63, 0.08);
+
+  .custom-container-title {
+    color: #27c93f;
+  }
+}
+
+.custom-container.warning {
+  background-color: rgba(255, 189, 47, 0.08);
+
+  .custom-container-title {
+    color: #ffbd2e;
+  }
+}
+
+.custom-container.danger {
+  background-color: rgba(255, 95, 86, 0.08);
+
+  .custom-container-title {
+    color: #ff5f56;
+  }
+}
