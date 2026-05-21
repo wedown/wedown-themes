@@ -44,16 +44,16 @@ blockquote {
   border-radius: 4px;
   padding-left: 36px;
 }
+blockquote p:first-of-type {
+  margin-top: -0.5em;
+}
 
 blockquote::before {
   content: '"';
+  margin-left: -0.5em;
   font-family: Georgia, serif;
   font-size: 40px;
   color: #586069;
-
-  p {
-    margin-top: 0;
-  }
 }
 
 strong {
