@@ -1,5 +1,4 @@
 #wedown {
-  background: #f5f0e8;
   color: #5d4037;
   font-family: 'Optima', 'Songti SC', 'Noto Serif SC', 'Source Han Serif SC', serif;
   font-size: 16px;
@@ -115,7 +114,6 @@
     border-radius: 8px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
     overflow-x: hidden;
-    background: #e8e0d3;
 
     > code {
       display: block;
@@ -123,7 +121,7 @@
       font-size: 13px;
       line-height: 1.6;
       overflow-x: auto;
-      color: #5d4037;
+      background: #e8e0d3;
     }
   }
 
