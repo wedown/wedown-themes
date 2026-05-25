@@ -54,27 +54,6 @@ function Preview({ ref, onScroll }: { ref: RefObject<HTMLDivElement | null>; onS
 
     // Base Style for Host
     const baseStyle = document.createElement('style');
-    baseStyle.textContent = `
-      :host {
-        display: block;
-        width: 100%;
-        height: 100%;
-        min-height: 100%;
-      }
-      #wedown {
-        background: #fff;
-        color: #1a1a1a;
-        padding: 40px;
-        min-height: 100%;
-        box-sizing: border-box;
-      }
-      :host(.preview--mobile) #wedown {
-        width: 375px;
-        max-width: 100%;
-        margin: 0 auto;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-      }
-    `;
     shadowRoot.current.appendChild(baseStyle);
 
     // Container for dynamic styles
