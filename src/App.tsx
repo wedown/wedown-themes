@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import Editor from './lib/components/Editor';
 import Preview from './lib/components/Preview';
 import ThemeSelector from './lib/components/ThemeSelector';

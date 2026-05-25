@@ -1,4 +1,4 @@
-import { type ChangeEventHandler } from 'react';
+import React, { type ChangeEventHandler } from 'react';
 import { useThemeContext, type ThemeInfo } from '../stores/themeContext';
 import type { HighlightThemeInfo } from '../utils/themes';
 

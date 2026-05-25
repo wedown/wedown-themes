@@ -50,11 +50,15 @@ const ThemeProvider: React.FC<any> = ({ children }) => {
   const setThemes = (list: ThemeInfo[]) => {
     _setThemes(list);
     if (list.length > 0) {
-      setActiveTheme(list[0]);
+      const id = window.localStorage.getItem('activeTheme');
+      setActiveTheme(list.find((item) => item.id === id) ?? list[0]);
     }
   };
 
   const selectTheme = (id: string) => {
+    // 本地化缓存
+    window.localStorage.setItem('activeTheme', id);
+    // 刷新页面
     _setThemes((list) => {
       const found = list?.find((item) => item.id === id) ?? null;
       setActiveTheme(found);

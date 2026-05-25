@@ -100,12 +100,14 @@ blockquote {
   background: rgba(180, 186, 194, 0.1);
   font-size: $base-font-size * 0.9;
   color: #1e6bb8;
+  letter-spacing: normal;
   border-radius: 4px;
 }
 
 /* Prism Overrides for WeChat */
 pre {
   margin: 20px 0 20px;
+  letter-spacing: normal;
   border: none;
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);

@@ -1,5 +1,4 @@
 #wedown {
-  background: #fdf2f2;
   color: #333;
   font-family: 'mp-quote', PingFang SC, system-ui, -apple-system, BlinkMacSystemFont,
     'Helvetica Neue', 'Hiragino Sans GB', 'Microsoft YaHei UI', 'Microsoft YaHei',
@@ -7,25 +6,23 @@
   font-size: 16px;
   font-weight: 400;
   line-height: 1.8;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.08em;
   word-wrap: break-word;
 
   h1 {
     color: #b91c1c;
     text-align: center;
     font-weight: 600;
-    font-size: 1.8em;
+    font-size: 1.6em;
     letter-spacing: 0.1em;
     margin: 2em 0 1.5em;
-    border-bottom: 2px solid #b91c1c;
-    padding-bottom: 0.5em;
     display: inline-block;
 
     &::after {
       content: '';
       display: block;
-      height: 1px;
-      background: linear-gradient(90deg, transparent, #d4a843, transparent);
+      height: 2px;
+      background: linear-gradient(90deg, transparent, #b91c1c, transparent);
       margin-top: 4px;
     }
   }
@@ -33,7 +30,7 @@
   h2 {
     color: #b91c1c;
     font-weight: 600;
-    font-size: 1.5em;
+    font-size: 1.4em;
     margin: 2em 0 1.5em;
     padding-left: 0.75em;
     position: relative;
@@ -104,10 +101,7 @@
     border-left: 4px solid #b91c1c;
     color: #555;
     font-style: italic;
-
-    p {
-      font-size: 0.95em;
-    }
+    font-size: 16px;
   }
 
   :not(pre) > code {
@@ -126,7 +120,6 @@
     border-radius: 8px;
     box-shadow: 0 2px 8px rgba(185, 28, 28, 0.04);
     overflow-x: hidden;
-    background: #fef7f7;
 
     > code {
       display: block;
@@ -134,7 +127,6 @@
       font-size: 13px;
       line-height: 1.6;
       overflow-x: auto;
-      color: #333;
     }
   }
 
