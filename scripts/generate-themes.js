@@ -104,7 +104,7 @@ export async function runAll() {
   const themes = await getThemesMetadata();
   
   // 编译并写入 CSS
-  for (const theme of [{ id: 'base' }].concat(themes)) {
+  for (const theme of [{ id: 'base' }, { id: 'special' }].concat(themes)) {
     try {
       const css = await getThemeCss(theme.id);
       if (css) {
