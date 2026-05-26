@@ -81,6 +81,9 @@ function Preview({ ref, onScroll }: { ref: RefObject<HTMLDivElement | null>; onS
       style?.remove();
     }
 
+    // 1. Special Styles
+    await loadCssTextIntoStyle('style-special', '/themes/special.css');
+
     // 2. Highlight.js Styles
     const highlightUrl = getHighlightCssUrl(highlightTheme);
     await loadCssTextIntoStyle('style-highlight', highlightUrl);
