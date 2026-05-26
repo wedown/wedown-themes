@@ -139,6 +139,35 @@ print(fibonacci(10))
 恭喜！您已掌握 WeDown 的基本用法，开始创作精彩内容吧！
 :::
 
+### 图片尺寸
+
+在图片url末尾拼接`=WxH`可进行图片尺寸设置，宽和高可省略其一，`x`不能省略。
+
+```md
+![Wedown Logo](https://xxx.com/image.png=100x)
+```
+
+效果：
+![Wedown Logo](https://cdn.jsdelivr.net/gh/xinghefe/bucket@oss/images/wedown/20260526014345_Frame_4.png=100x)
+
+### 图片容器
+
+可对多张图片进行排列：
+
+```md
+::: image-group 标题可省略
+![image1](https://xxx.com/image.png =100x)
+![image2](https://xxx.com/image2.png)
+:::
+```
+
+效果：
+
+::: image-group 标题可省略
+![图1](https://cdn.jsdelivr.net/gh/xinghefe/bucket@oss/images/wedown/20260526014345_Frame_4.png =100x)
+![图2](https://cdn.jsdelivr.net/gh/xinghefe/bucket@oss/images/wedown/20260526015320_xinghefe_logo.png =100x)
+:::
+
 ## 🖼️ 图片上传
 
 ### 方式一：粘贴图片

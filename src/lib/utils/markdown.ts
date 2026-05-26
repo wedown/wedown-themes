@@ -7,7 +7,7 @@ const md = new MarkdownIt({
   html: true,
   linkify: true,
   typographer: true,
-  highlight(code, lang) {
+  highlight: (code, lang): string => {
     if (lang && hljs.getLanguage(lang)) {
       const value = hljs.highlight(code, {
         language: lang,
@@ -19,6 +19,37 @@ const md = new MarkdownIt({
     return `<pre><code class="hljs">${safe}</code></pre>`
   },
 })
+
+const defaultImageRender = md.renderer.rules.image;
+md.renderer.rules.image = function(tokens, idx, options, env, self) {
+  const token = tokens[idx];
+  const src = token.attrGet('src') || '';
+  const m = src.match(/^(.*?)\s*=\s*(\d*)\s*x\s*(\d*)\s*$/i);
+  if (m) {
+    token.attrSet('src', m[1].trim());
+    if (m[2]) token.attrSet('width', m[2]);
+    if (m[3]) token.attrSet('height', m[3]);
+  }
+
+  const imgHtml = defaultImageRender
+    ? defaultImageRender(tokens, idx, options, env, self)
+    : self.renderToken(tokens, idx, options);
+
+  const altText = self.renderInlineAsText(token.children || [], options, env);
+  if (altText) {
+    return `<figure>${imgHtml}<figcaption>${md.utils.escapeHtml(altText)}</figcaption></figure>`;
+  }
+  return imgHtml;
+};
+
+const _render = md.render.bind(md);
+md.render = function (src, env) {
+  const processed = src.replace(
+    /(!\[[^\]]*\]\([^)]*?)\s+=\s*(\d*)\s*x\s*(\d*)\)/gi,
+    '$1=$2x$3)'
+  );
+  return _render(processed, env);
+};
 
 /**
  * Remove frontmatter from markdown content
@@ -61,9 +92,42 @@ md.use(...createContainer('success'));
 // @ts-ignore
 md.use(...createContainer('container'));
 
+let imageGroupLabel = '';
+
+// @ts-ignore
+md.use(container, 'image-group', {
+  render: function (tokens: any[], idx: number) {
+    if (tokens[idx].nesting === 1) {
+      const info = tokens[idx].info.trim().slice('image-group'.length).trim();
+      imageGroupLabel = info ? md.utils.escapeHtml(info) : '';
+      return '<section class="image-group">\n<section class="image-group-images">\n';
+    }
+    const label = imageGroupLabel ? `<p class="image-group-label">${imageGroupLabel}</p>\n` : '';
+    imageGroupLabel = '';
+    return `</section>\n${label}</section>\n`;
+  }
+});
+
 md.use(todoTask);
 
 md.use(replaceLiPlugin);
+
+md.core.ruler.push('image-group-strip-p', function (state) {
+  const tokens = state.tokens;
+  let inRow = false;
+  for (let i = 0; i < tokens.length; i++) {
+    const t = tokens[i];
+    if (t.type === 'container_image-group_open') { inRow = true; continue; }
+    if (t.type === 'container_image-group_close') { inRow = false; continue; }
+    if (inRow && t.type === 'paragraph_open') {
+      const inline = tokens[i + 1];
+      if (inline?.type === 'inline' && inline.children?.every(c => c.type === 'image' || !c.content.trim())) {
+        t.hidden = true;
+        if (tokens[i + 2]?.type === 'paragraph_close') tokens[i + 2].hidden = true;
+      }
+    }
+  }
+});
 
 // 替换 li 标签，增加 section 包裹
 function replaceLiPlugin(md: MarkdownIt) {

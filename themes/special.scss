@@ -1,0 +1,113 @@
+// 图片容器
+.image-group {
+  margin: 1.5em 0;
+  .image-group-images {
+    text-align: center;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+  .image-group-label {
+    margin-top: 1em;
+    text-align: center;
+    color: #666;
+    font-size: 0.95em;
+  }
+
+  figure {
+    display: inline-block;
+    margin: 0;
+    flex-shrink: 0;
+  }
+}
+
+/* Custom Containers */
+.custom-container {
+  margin: 1.5em 0;
+  padding: 0.1em 1.125em;
+  border-radius: 8px;
+  font-size: 0.95em;
+  background-color: rgba(152, 152, 152, 0.1);
+}
+
+.custom-container-title {
+  margin: 1em 0;
+  font-weight: 600;
+}
+
+/* Info */
+.custom-container.info {
+  background-color: rgba(59, 142, 237, 0.1);
+}
+
+.custom-container.info .custom-container-title {
+  color: #3b8eed;
+}
+
+/* Success */
+.custom-container.success {
+  background-color: rgba(39, 201, 63, 0.1);
+}
+
+.custom-container.success .custom-container-title {
+  color: #27c93f;
+}
+
+/* Warning */
+.custom-container.warning {
+  background-color: rgba(255, 189, 47, 0.1);
+}
+
+.custom-container.warning .custom-container-title {
+  color: #ffbd2e;
+}
+
+/* Danger */
+.custom-container.danger {
+  background-color: rgba(255, 95, 86, 0.1);
+}
+
+.custom-container.danger .custom-container-title {
+  color: #ff5f56;
+}
+
+/* Task Lists */
+.task-list {
+  padding-left: 0;
+}
+.task-list-item {
+  list-style-type: none !important;
+  padding-left: 0 !important;
+}
+.task-list-item .checkbox {
+  -webkit-appearance: initial;
+  display: inline-block;
+  margin: 0 0.5em 0 0.25em;
+  vertical-align: middle;
+  position: relative;
+  width: 1em;
+  height: 1em;
+  font-size: $base-font-size;
+  border: 1px solid rgba(200, 190, 187, 0.3);
+  border-radius: 0.2em;
+}
+.task-list-item .checkbox::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 0.8em;
+  font-weight: bold;
+}
+.task-list-item .checkbox.checked {
+  background-color: var(--primary-color, #27c93f);
+  border-color: var(--primary-color, #27c93f);
+}
+.task-list-item .checkbox.checked::before {
+  display: flex;
+}
