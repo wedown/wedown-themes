@@ -1,46 +1,45 @@
-$base-font-size: 15px;
+$base-font-size: 16px;
 
 #wedown {
   /* font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; */
   font-family: 'mp-quote', PingFang SC, system-ui, -apple-system, BlinkMacSystemFont, 'Helvetica Neue',
     'Hiragino Sans GB', 'Microsoft YaHei UI', 'Microsoft YaHei', Arial, sans-serif;
-  padding: 0 12px 1em;
+  padding: 0 12px $base-font-size;
   color: #252933;
   font-size: $base-font-size;
   font-weight: 400;
   text-align: left;
   line-height: 1.75;
-  letter-spacing: 0.1em;
+  letter-spacing: 1.25px;
   word-wrap: break-word;
-  // word-break: break-all;
 }
 
 /* Headings */
 h1 {
-  margin-top: 2em;
-  margin-bottom: 1.5em;
-  font-size: 1.8em;
+  margin-top: $base-font-size * 2;
+  margin-bottom: $base-font-size * 1.5;
+  font-size: $base-font-size * 1.8;
   font-weight: 600;
 }
 
 h2 {
-  margin-top: 2em;
-  margin-bottom: 1.5em;
-  font-size: 1.5em;
+  margin-top: $base-font-size * 2;
+  margin-bottom: $base-font-size * 1.5;
+  font-size: $base-font-size * 1.5;
   font-weight: 600;
 }
 
 h3 {
-  margin-top: 1.6em;
-  margin-bottom: 1.5em;
-  font-size: 1.25em;
+  margin-top: $base-font-size * 1.6;
+  margin-bottom: $base-font-size * 1.5;
+  font-size: $base-font-size * 1.25;
   font-weight: 600;
 }
 
 h4 {
-  margin-top: 1.5em;
-  margin-bottom: 1.5em;
-  font-size: 1em;
+  margin-top: $base-font-size * 1.5;
+  margin-bottom: $base-font-size * 1.5;
+  font-size: $base-font-size;
   font-weight: 600;
 }
 
@@ -49,20 +48,20 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 p {
-  margin-top: 1.5em;
-  margin-bottom: 1.5em;
+  margin-top: $base-font-size * 1.5;
+  margin-bottom: $base-font-size * 1.5;
 }
 
 ul,
 ol {
-  margin: 1.5em 0 1.5em;
-  padding-left: 1.5em;
+  margin: $base-font-size * 1.5 0;
+  padding-left: $base-font-size * 1.5;
   font-size: $base-font-size;
 }
 
 li ul,
 li ol {
-  margin: 0.25em 0 0.25em;
+  margin: $base-font-size * 0.25 0;
 }
 
 ul {
@@ -74,7 +73,7 @@ ol {
 }
 
 li {
-  margin-bottom: 0.25em;
+  margin-bottom: $base-font-size * 0.25;
 }
 
 /* Images */
@@ -82,19 +81,19 @@ img {
   max-width: 100%;
 }
 figure {
-  margin: 1.5em 0;
+  margin: $base-font-size * 1.5 0;
   text-align: center;
 }
 figcaption {
-  margin-top: 0.5em;
-  font-size: 0.875em;
+  margin-top: $base-font-size * 0.5;
+  font-size: $base-font-size * 0.875;
   color: #999;
 }
 
 /* Blockquotes */
 blockquote {
   margin: $base-font-size * 1.5 0;
-  padding: 1px 16px;
+  padding: 1px $base-font-size;
   background: rgba(152, 152, 152, 0.1);
   color: #555;
   font-size: $base-font-size * 0.95;
@@ -103,8 +102,8 @@ blockquote {
 
 /* Inline Code */
 :not(pre) > code {
-  margin: 0 0.1em;
-  padding: 0.1em 0.4em;
+  margin: 0 $base-font-size * 0.1;
+  padding: $base-font-size * 0.1 $base-font-size * 0.4;
   font-family: 'JetBrains Mono', Menlo, Monaco, Consolas, 'Courier New', monospace;
   background: rgba(180, 186, 194, 0.1);
   font-size: $base-font-size * 0.9;
@@ -146,7 +145,7 @@ pre code::before {
 table {
   width: 100%;
   border-collapse: collapse;
-  margin: 1.5em 0 1.5em;
+  margin: $base-font-size * 1.5 0 $base-font-size * 1.5;
   table-layout: fixed;
 }
 
@@ -166,7 +165,7 @@ th {
 hr {
   height: 1px;
   padding: 0;
-  margin: 2em 0;
+  margin: $base-font-size * 2 0;
   background-color: #e1e4e8;
   border: 0;
 }
